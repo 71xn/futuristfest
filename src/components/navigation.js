@@ -18,7 +18,7 @@ const Navigation = () => {
 						height="30"
 						className="d-inline-block align-top"
 					/>{" "}
-					FutureFest 2021
+					FuturistFest 2021
 				</Navbar.Brand>
 				<Navbar.Toggle />
 				<Navbar.Collapse className="justify-content-end">
