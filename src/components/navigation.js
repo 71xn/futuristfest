@@ -8,7 +8,7 @@ const onButtonClick = () => {
 
 const Navigation = () => {
 	return (
-		<Navbar bg="dark" variant="dark" fixed="top" expand="lg">
+		<Navbar bg="dark" variant="dark" fixed="top">
 			<Container>
 				<Navbar.Brand href="/">
 					<img
@@ -18,8 +18,13 @@ const Navigation = () => {
 						height="30"
 						className="d-inline-block align-top"
 					/>{" "}
-					FuturistFest 2021
+					FuturistFest 2021 ➡ Environmental Issue
 				</Navbar.Brand>
+				<Nav className="me-auto">
+					<Nav.Link href="/">Home</Nav.Link>
+					<Nav.Link href="/about">About</Nav.Link>
+					<Nav.Link href="/contact">Contact</Nav.Link>
+				</Nav>
 				<Navbar.Toggle />
 				<Navbar.Collapse className="justify-content-end">
 					<Button variant="outline-success" onClick={onButtonClick}>
