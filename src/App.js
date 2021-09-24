@@ -1,9 +1,9 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./styles/App.css";
 import Navigation from "./components/navigation";
 import Main from "./pages/Main";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // Route renders a component based on a url
 
 function App() {

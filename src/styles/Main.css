@@ -1,0 +1,23 @@
+.Main {
+	text-align: left;
+}
+
+/* unvisited link */
+a:link {
+	color: #61dafb;
+}
+
+/* visited link */
+a:visited {
+	color: #61dafb;
+}
+
+/* mouse over link */
+a:hover {
+	color: #61dafb;
+}
+
+/* selected link */
+a:active {
+	color: #61dafb;
+}

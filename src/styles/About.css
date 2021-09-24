@@ -1,0 +1,28 @@
+.About {
+	text-align: left;
+	padding: 10%;
+}
+
+.AlertHeading {
+	text-align: center;
+}
+
+/* unvisited link */
+a:link {
+	color: #a5b4cc;
+}
+
+/* visited link */
+a:visited {
+	color: #a5b4cc;
+}
+
+/* mouse over link */
+a:hover {
+	color: #a5b4cc;
+}
+
+/* selected link */
+a:active {
+	color: #a5b4cc;
+}
