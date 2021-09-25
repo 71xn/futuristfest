@@ -1,5 +1,6 @@
 import { Alert } from "react-bootstrap";
 import "../styles/Main.css";
+import Form from "../components/Form";
 
 function Main() {
 	return (
@@ -13,6 +14,7 @@ function Main() {
 					<a href="/contact">here</a>.
 				</p>
 			</Alert>
+			<br />
 		</div>
 	);
 }
