@@ -1,5 +1,6 @@
 import { Alert } from "react-bootstrap";
 import "../styles/About.css";
+import Health from "../components/health";
 
 function About() {
 	return (
@@ -20,6 +21,7 @@ function About() {
 					<a href="/contact">here</a>!
 				</p>
 			</Alert>
+			<Health />
 		</div>
 	);
 }
