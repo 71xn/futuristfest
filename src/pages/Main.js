@@ -15,6 +15,7 @@ function Main() {
 				</p>
 			</Alert>
 			<br />
+			<Form />
 		</div>
 	);
 }

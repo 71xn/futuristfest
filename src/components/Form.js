@@ -3,25 +3,36 @@ import { useForm } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
 
 export default function App() {
+	const fetchWelcome = async (name) => {
+		const apiURL = "https://futuristfest.herokuapp.com/getmsg/?name=" + name;
+		const response = await fetch(apiURL);
+		console.log(response);
+		const data = await response.json();
+		console.log(data);
+	};
+
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
-	const onSubmit = (data) => console.log(data);
+	const onSubmit = (data) => {
+		console.log(data);
+		fetchWelcome(data.Name);
+	};
 	console.log(errors);
 
 	return (
 		<Form onSubmit={handleSubmit(onSubmit)}>
 			<Form.Group className="mb-3" controlId="formBasicEmail">
-				<Form.Label>Email address</Form.Label>
+				<Form.Label>First Name</Form.Label>
 				<Form.Control
-					type="email"
-					placeholder="Enter email"
-					{...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
+					type="text"
+					placeholder="Enter Name"
+					{...register("Name", { required: true })}
 				/>
 				<Form.Text className="text-muted">
-					We'll never share your email with anyone else.
+					We'll never share your name with anyone else.
 				</Form.Text>
 			</Form.Group>
 
