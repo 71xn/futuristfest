@@ -1,6 +1,9 @@
 import React from "react";
 import { ProgressBar } from "react-bootstrap";
 
+// This returns a status bar that indicated carbon footprint based on a value between 0 and 1
+// 0 is very good and 1 is very bad
+
 export default function StatusBar(props) {
 	function calculateVal(v) {
 		console.log(v);

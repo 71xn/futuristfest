@@ -5,6 +5,8 @@ import Slider from "@mui/material/Slider";
 import "bootstrap/dist/css/bootstrap.min.css";
 import StatusBar from "./StatusBar";
 
+// This is the form that handles the data needed for the environmental footprint calculation
+
 export default function EnvForm() {
 	const [check, setCheck] = useState(false);
 	const [footprint, setFootprint] = useState(0.1);
@@ -16,6 +18,7 @@ export default function EnvForm() {
 	} = useForm();
 
 	const onSubmit = async (data) => {
+		// This request is for testing as of right now, all of the params will be used in the future
 		console.log(data);
 		const apiURL =
 			"https://futuristfest.herokuapp.com//env-data/?" +

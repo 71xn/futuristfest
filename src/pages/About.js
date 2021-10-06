@@ -14,10 +14,11 @@ function About() {
 						FuturistFest CTF
 					</a>
 					, in relation to environmental issues. More specifically this web
-					application has been designed to target the issue of air pollution and
-					how we can start to tackle that problem. More details about the
-					project and the CTF can be found on the webpage listed above or check
-					back soon for more updates, alternatively contact us{" "}
+					application has been designed to target the issues of air pollution,
+					carbon footprint and how we can start to reduce the amount of carbon
+					that we release into the atmosphere. More details about the project
+					and the CTF can be found on the webpage listed above or check back
+					soon for more updates, alternatively contact us{" "}
 					<a href="/contact">here</a>!
 				</p>
 			</Alert>
