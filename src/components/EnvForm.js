@@ -28,11 +28,71 @@ export default function EnvForm() {
 	const onSubmit = async (data) => {
 		// This request is for testing as of right now, all of the params will be used in the future
 		console.log(data);
+
+		// Separates the parts used in the api request
+		const countryParam = "Country=" + data.Country;
+		const food1Param = "Food1=" + data.Food1;
+		const check1Param = "Check1" + check1;
+		const food2Param = "Food2=" + data.Food2;
+		const transport1Param = "Transport1=" + data.Transport1;
+		const flights1Param = "Flights1=" + data.Flights1;
+		const flights2Param = "Flights2=" + data.Flights2;
+		const flights3Param = "Flights3=" + data.Flights3;
+		const flights4Param = "Flights4=" + data.Flights4;
+		const flights5Param = "Flights5=" + data.Flights5;
+		const flights6Param = "Flights6=" + data.Flights6;
+		const flights7Param = "Flights7=" + data.Flights7;
+		const house1Param = "House1=" + data.House1;
+		const house2Param = "House2=" + data.House2;
+		const house3Param = "House3=" + data.House3;
+		const house4Param = "House4=" + data.House4;
+		const check2Param = "Check2=" + check2;
+		const andChar = "&";
+
+		const url =
+			"http://127.0.0.1:5000/env-data/?" +
+			countryParam +
+			andChar +
+			food1Param +
+			andChar +
+			food2Param +
+			andChar +
+			check1Param +
+			andChar +
+			transport1Param +
+			andChar +
+			flights1Param +
+			andChar +
+			flights2Param +
+			andChar +
+			flights3Param +
+			andChar +
+			flights4Param +
+			andChar +
+			flights5Param +
+			andChar +
+			flights6Param +
+			andChar +
+			flights7Param +
+			andChar +
+			house1Param +
+			andChar +
+			house2Param +
+			andChar +
+			house3Param +
+			andChar +
+			house4Param +
+			andChar +
+			check2Param;
+
+		console.log("Test URL: " + url);
+
 		// Progress bar code
 		for (let i = 0; i <= 100; i++) {
 			setProgress(i);
 			await sleepNow(20);
 		}
+
 		const apiURL =
 			"https://futuristfest.herokuapp.com//env-data/?" +
 			"house2=" +
