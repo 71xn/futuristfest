@@ -23,11 +23,11 @@ export default function StatusBar(props) {
 
 	function scoreCheck(v) {
 		if (v < 0.4) {
-			return <large>Excellent</large>;
+			return <large style={{ color: "green" }}>Excellent</large>;
 		} else if (v > 0.4 && v < 0.69) {
-			return <large>Average</large>;
+			return <large style={{ color: "yellow" }}>Average</large>;
 		} else if (v >= 0.7) {
-			return <large>Bad</large>;
+			return <large style={{ color: "red" }}>Bad</large>;
 		}
 	}
 
@@ -36,7 +36,7 @@ export default function StatusBar(props) {
 			<ProgressBar
 				variant={variantCheck(props.value)}
 				now={calculateVal(props.value)}
-				label={"Score: " + 100 * props.value + " out of 100"}
+				label={"Score : " + Math.round(100 * props.value) + " out of 100"}
 			/>
 			<br />
 			<p className="center"> {scoreCheck(props.value)} </p>
