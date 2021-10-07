@@ -36,6 +36,7 @@ export default function StatusBar(props) {
 			<ProgressBar
 				variant={variantCheck(props.value)}
 				now={calculateVal(props.value)}
+				label={"Score: " + 100 * props.value + " out of 100"}
 			/>
 			<br />
 			<p className="center"> {scoreCheck(props.value)} </p>
