@@ -132,17 +132,6 @@ export default function EnvForm() {
       <hr />
 
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>First Name *</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter Name"
-            {...register("Name", { required: true })}
-          />
-          <Form.Text className="text-muted">
-            We'll never share your data with anyone else.
-          </Form.Text>
-        </Form.Group>
         <Form.Label>Country *</Form.Label>
         <Form.Select
           aria-label="Floating label select example"

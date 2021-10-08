@@ -12,9 +12,9 @@ export default function StatusBar(props) {
   }
 
   function variantCheck(v) {
-    if (v < 0.4) {
+    if (v <= 0.4) {
       return "success";
-    } else if (v > 0.4 && v < 0.69) {
+    } else if (v > 0.4 && v < 0.7) {
       return "warning";
     } else if (v >= 0.7) {
       return "danger";
