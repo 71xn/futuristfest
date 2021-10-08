@@ -61,9 +61,9 @@ export default function StatusBar(props) {
       <br />
       <p>
         <big>
-          You are {goalCheck(percentageCalc(props.goalScore) / 100)} of the way
-          to meeting the carbon emissions target of 2030 which is {props.goal}{" "}
-          tonnes of CO2.
+          You are {goalCheck(Math.round(percentageCalc(props.goalScore) / 100))}{" "}
+          of the way to meeting the carbon emissions target of 2030 which is{" "}
+          {props.goal} tonnes of CO2.
         </big>
       </p>
       <ProgressBar
