@@ -45,7 +45,7 @@ export default function ScoreBreakdown(props) {
         </p>
       </Alert>
       <br />
-      <p className="title">This is your score breakdown</p>
+      <p className="title">This is your carbon footprint breakdown</p>
       <hr />
       Your food carbon emissions are: {colorSuggestion(props.suggestions[0])}
       <br />
@@ -59,6 +59,32 @@ export default function ScoreBreakdown(props) {
       <br />
       Your carbon emissions from your flights are:{" "}
       {colorSuggestion(props.suggestions[4])}
+      <br />
+      <br />
+      Here are a few links with suggestions on how to improve your carbon
+      footprint:
+      <ul>
+        <li>
+          <a
+            href="https://www.futurelearn.com/info/blog/how-to-reduce-your-carbon-footprint-tips"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {" "}
+            Reducing your carbon footprint
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://europa.eu/youth/get-involved/sustainable%20development/how-reduce-my-carbon-footprint_en"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {" "}
+            Europa Youth - Reducing your carbon footprint
+          </a>
+        </li>
+      </ul>
     </div>
   );
 }

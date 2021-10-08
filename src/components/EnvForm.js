@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Form, Button, ProgressBar } from "react-bootstrap";
+import { Form, Button, ProgressBar, Alert } from "react-bootstrap";
 import Slider from "@mui/material/Slider";
 import "bootstrap/dist/css/bootstrap.min.css";
 import StatusBar from "./StatusBar";
@@ -19,6 +19,10 @@ export default function EnvForm() {
   const [footprint, setFootprint] = useState(0.1);
   const [progress, setProgress] = useState(0);
   const [suggestions, setSuggestions] = useState(["", "", "", "", ""]);
+  const [goalScore, setGoalScore] = useState(0);
+  const [totalEmissions, setTotalEmissions] = useState(0);
+  const [goal, setGoal] = useState(0);
+  const [apiDone, setApiDone] = useState(false);
 
   const {
     register,
@@ -86,18 +90,12 @@ export default function EnvForm() {
       andChar +
       check2Param;
 
-    console.log("Test URL: " + url);
-
     // Progress bar code
     for (let i = 0; i <= 100; i++) {
       setProgress(i);
       await sleepNow(20);
     }
 
-    const apiURL =
-      "https://futuristfest.herokuapp.com//env-data/?" +
-      "house2=" +
-      data.House2;
     const request = await fetch(url);
     const apiData = await request.json();
     console.log(apiData);
@@ -108,7 +106,17 @@ export default function EnvForm() {
     const transport = String(apiData.transportAverage);
     const energy = String(apiData.energyAverage);
     const flights = String(apiData.flightsAverage);
+    console.log(
+      "goal score:" +
+        apiData.goalScore +
+        "  total emissions: " +
+        apiData.totalEmissions
+    );
+    setGoalScore(apiData.goalScore);
+    setTotalEmissions(apiData.totalEmissions);
     setSuggestions([food, home, transport, energy, flights]);
+    setGoal(apiData.goal);
+    setApiDone(true);
   };
   console.log(errors);
 
@@ -340,6 +348,10 @@ export default function EnvForm() {
           <option value="Zambia">Zambia</option>
           <option value="Zimbabwe">Zimbabwe</option>
         </Form.Select>
+        <Form.Text className="text-muted">
+          You can type the first letter of your countries name into the dropdown
+          to find it faster.
+        </Form.Text>
         <br />
         <br />
         <b> Food </b>
@@ -378,6 +390,21 @@ export default function EnvForm() {
             setCheck1(e.target.checked);
           }}
         />
+        <br />
+
+        <Alert show={true} variant="info">
+          To find out more information in regards to local food sourcing, please
+          see the following article:{" "}
+          <a
+            href="https://www.nisbets.co.uk/importance-of-locally-sourced-ingredients"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {" "}
+            here
+          </a>
+          .
+        </Alert>
 
         <br />
         <br />
@@ -483,6 +510,20 @@ export default function EnvForm() {
           <option value="3">Low-occupancy apartments</option>
           <option value="4">High-occupancy apartments</option>
         </Form.Select>
+        <br />
+        <Alert show={true} variant="info">
+          If you are unsure about what category your house fits into, see the
+          following link:{" "}
+          <a
+            href="https://www.propertyinvestmentproject.co.uk/blog/types-of-houses/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {" "}
+            here
+          </a>
+          .
+        </Alert>
 
         <br />
         <Form.Label>What percentage of your energy mix is green?</Form.Label>
@@ -505,6 +546,20 @@ export default function EnvForm() {
             setCheck2(e.target.checked);
           }}
         />
+        <br />
+        <Alert show={true} variant="info">
+          Find out if your energy provider is green and what percentage of the
+          energy they supply is green (UK Only):{" "}
+          <a
+            href="https://www.which.co.uk/news/2019/09/how-green-is-your-energy-tariff/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {" "}
+            here
+          </a>
+          .
+        </Alert>
 
         <br />
         <Form.Label>
@@ -557,11 +612,20 @@ export default function EnvForm() {
             label="Loading . . ."
           />
         ) : (
-          <StatusBar value={footprint} />
+          <StatusBar
+            value={footprint}
+            goalScore={goalScore}
+            goal={goal}
+            totalEmissions={totalEmissions}
+          />
         )}
       </div>
       <br />
-      <ScoreBreakdown suggestions={suggestions} />
+      {apiDone === false ? (
+        <p></p>
+      ) : (
+        <ScoreBreakdown suggestions={suggestions} />
+      )}
       <br />
       <br />
       <br />

@@ -1,23 +1,26 @@
 .Main {
-	text-align: left;
+  text-align: left;
+  width: 80%;
+  max-width: 80%;
+  min-width: 80%;
 }
 
 /* unvisited link */
 a:link {
-	color: #61dafb;
+  color: #61dafb;
 }
 
 /* visited link */
 a:visited {
-	color: #61dafb;
+  color: #61dafb;
 }
 
 /* mouse over link */
 a:hover {
-	color: #61dafb;
+  color: #61dafb;
 }
 
 /* selected link */
 a:active {
-	color: #61dafb;
+  color: #61dafb;
 }
