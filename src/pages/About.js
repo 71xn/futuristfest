@@ -22,6 +22,52 @@ function About() {
 					<a href="/contact">here</a>!
 				</p>
 			</Alert>
+			<br />
+			<Alert show={true} variant="info">
+				<Alert.Heading className="AlertHeading">Technologies</Alert.Heading>
+				<hr />
+				<p>
+					{" "}
+					The production version of this site is automatically built using a
+					CI/CD pipeline to{" "}
+					<a
+						href="https://pages.cloudflare.com"
+						target="_blank"
+						rel="noreferrer"
+						style={{ color: "orange" }}
+					>
+						Cloudflare Pages
+					</a>
+					. The backend is deployed and hosted on{" "}
+					<a
+						href="https://heroku.com"
+						target="_blank"
+						rel="noreferrer"
+						style={{ color: "purple" }}
+					>
+						Heroku
+					</a>
+					. The code for production version of this site can be found on GitHub,{" "}
+					<a
+						href="https://github.com/71xn/futuristfest"
+						target="_blank"
+						rel="noreferrer"
+						style={{ color: "grey" }}
+					>
+						here
+					</a>
+					. The code for the API can also be found on GitHub,{" "}
+					<a
+						href="https://github.com/71xn/futuristfest-backend"
+						target="_blank"
+						rel="noreferrer"
+						style={{ color: "grey" }}
+					>
+						here
+					</a>
+					.
+				</p>
+			</Alert>
 			<Health />
 		</div>
 	);
