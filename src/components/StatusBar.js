@@ -31,10 +31,6 @@ export default function StatusBar(props) {
     }
   }
 
-  function percentageCalc(v) {
-    return Math.round(v * 100);
-  }
-
   function goalCheck(v) {
     if (v >= 0.6) {
       return <big style={{ color: "green" }}> {v * 100}%</big>;
@@ -61,9 +57,8 @@ export default function StatusBar(props) {
       <br />
       <p>
         <big>
-          You are {goalCheck(Math.round(percentageCalc(props.goalScore) / 100))}{" "}
-          of the way to meeting the carbon emissions target of 2030 which is{" "}
-          {props.goal} tonnes of CO2.
+          You are {goalCheck(props.goalScore)} of the way to meeting the carbon
+          emissions target of 2030 which is {props.goal} tonnes of CO2.
         </big>
       </p>
       <ProgressBar
